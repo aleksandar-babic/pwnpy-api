@@ -42,7 +42,10 @@ module.exports = {
       .intercept('E_UNIQUE', 'emailAlreadyInUse')
       .fetch();
 
-    return exits.success(user);
+    return exits.success({
+      user,
+      token: await sails.helpers.jwt.generateToken(user)
+    });
   }
 
 
