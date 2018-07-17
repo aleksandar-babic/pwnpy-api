@@ -65,6 +65,10 @@ module.exports.models = {
    ***************************************************************************/
 
   attributes: {
+    id: {
+      type: 'string',
+      columnName: '_id'
+    },
     createdAt: {
       type: 'number',
       autoCreatedAt: true
@@ -72,10 +76,6 @@ module.exports.models = {
     updatedAt: {
       type: 'number',
       autoUpdatedAt: true
-    },
-    id: {
-      type: 'number',
-      autoIncrement: true
     }
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
@@ -121,5 +121,6 @@ module.exports.models = {
    *                                                                          *
    ***************************************************************************/
 
-  cascadeOnDestroy: true
+  cascadeOnDestroy: true,
+  archiveModelIdentity: false
 };
