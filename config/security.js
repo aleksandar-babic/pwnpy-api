@@ -45,4 +45,8 @@ module.exports.security = {
    *                                                                           *
    ****************************************************************************/
   // csrf: false
+  jwt: {
+    expiresIn: 3600,
+    secret: 'super-secret-change-this-please'
+  }
 };
