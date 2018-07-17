@@ -33,10 +33,6 @@ module.exports = {
     emailAlreadyInUse: {
       statusCode: 409,
       description: 'The provided email address is already in use.'
-    },
-    passwordsDontMatch: {
-      statusCode: 500,
-      description: 'password and passwordConfirm do not match.'
     }
   },
 
