@@ -26,16 +26,17 @@ module.exports.http = {
      * (This Sails app's routes are handled by the "router" middleware below.)  *
      *                                                                          *
      ***************************************************************************/
-    // order: [
-    //   'cookieParser',
-    //   'session',
-    //   'bodyParser',
-    //   'compress',
-    //   'poweredBy',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    // ],
+    order: [
+      'cookieParser',
+      'session',
+      'bodyParser',
+      'jwt',
+      'compress',
+      'poweredBy',
+      'router',
+      'www',
+      'favicon',
+    ],
     /***************************************************************************
      *                                                                          *
      * The body parser that will handle incoming multipart HTTP requests.       *
@@ -48,5 +49,16 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
+    jwt: (function () {
+      const jwt = require('express-jwt');
+      const securityConfig = require('./security').security;
+      const path = securityConfig.jwt.excludePaths;
+      const secret = securityConfig.jwt.secret;
+      return jwt({
+        secret
+      }).unless({
+        path
+      });
+    })()
   }
 };

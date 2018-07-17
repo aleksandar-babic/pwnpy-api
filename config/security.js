@@ -47,6 +47,10 @@ module.exports.security = {
   // csrf: false
   jwt: {
     expiresIn: 3600,
-    secret: 'super-secret-change-this-please'
+    secret: 'super-secret-change-this-please',
+    excludePaths: [
+      '/user/login',
+      '/user/signup'
+    ]
   }
 };
