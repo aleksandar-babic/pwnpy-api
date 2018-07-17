@@ -24,7 +24,7 @@ module.exports = {
   },
   beforeCreate(vals, proceed) {
     if (vals.password && vals.passwordConfirm && vals.password !== vals.passwordConfirm) {
-      return proceed(new Error('Passwords do not match.'));
+      return proceed(new Error(sails.__('VALIDATION.PASSWORDS_MISMATCH')));
     }
     sails.helpers.passwords.hashPassword(vals.password).exec((err, hash) => {
       if (err) {
