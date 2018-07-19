@@ -29,7 +29,7 @@ module.exports = {
     sails.log('Starting users seeder..');
     const totalUsers = inputs.amount;
     const faker = require('faker');
-    let fakeUsers = [];
+    const fakeUsers = [];
     for (let i = 0; i < totalUsers; ++i) {
       fakeUsers.push(await User.create({
         "email": faker.internet.email().toLowerCase(),
