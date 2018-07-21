@@ -23,5 +23,7 @@ module.exports = {
       model: 'question'
     }
   },
-
+  customToJSON() {
+    return _.omit(this, ['isCorrect']);
+  }
 };

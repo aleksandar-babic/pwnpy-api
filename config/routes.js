@@ -20,5 +20,8 @@ module.exports.routes = {
   },
   'GET /questions': {
     action: 'questions/index'
+  },
+  'GET /questions/:id/answers': {
+    action: 'questions/single/answers'
   }
 };
