@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Hash answers',
 
 
-  description: 'Returns bools for question answers and removes given hash',
+  description: 'Returns question and answer ids for which user sent correct answer',
 
 
   inputs: {
