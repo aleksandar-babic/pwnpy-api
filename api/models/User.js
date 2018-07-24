@@ -20,6 +20,11 @@ module.exports = {
       type: 'string',
       minLength: 6,
       required: true
+    },
+    hashes: {
+      description: 'Collections of question hashes that are generated for user',
+      collection: 'questionhash',
+      via: 'user'
     }
   },
   beforeCreate(vals, proceed) {

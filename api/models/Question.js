@@ -23,6 +23,11 @@ module.exports = {
       description: 'Collection of possible answers for question',
       collection: 'answer',
       via: 'question'
+    },
+    hashes: {
+      description: 'Collection of hashes generated for this question',
+      collection: 'questionhash',
+      via: 'questions'
     }
   },
 

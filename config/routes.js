@@ -23,5 +23,8 @@ module.exports.routes = {
   },
   'GET /questions/:id/answers': {
     action: 'questions/single/answers'
+  },
+  'POST /questions/hash-answers': {
+    action: 'questions/hash-answers'
   }
 };
