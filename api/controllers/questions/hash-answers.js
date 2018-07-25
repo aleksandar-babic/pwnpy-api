@@ -92,12 +92,12 @@ const getRealQuestionsForHash = async (hash) => {
     Promise.reject();
   }
 
-  const answersArr = questions.map(q => {
+  const answersArr = questions.map(q =>
     ({
       id: q.id,
       answers: createRealAnswerObj(q)
     })
-  });
+  );
 
   return Promise.resolve(answersArr);
 }
