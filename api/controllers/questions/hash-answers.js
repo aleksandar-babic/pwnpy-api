@@ -92,12 +92,11 @@ const getRealQuestionsForHash = async (hash) => {
     Promise.reject();
   }
 
-  let answersArr = [];
-  questions.forEach(q => {
-    answersArr.push({
+  const answersArr = questions.map(q => {
+    ({
       id: q.id,
       answers: createRealAnswerObj(q)
-    });
+    })
   });
 
   return Promise.resolve(answersArr);
