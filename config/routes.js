@@ -26,5 +26,8 @@ module.exports.routes = {
   },
   'POST /questions/hash-answers': {
     action: 'questions/hash-answers'
+  },
+  'POST /playground/execute': {
+    action: 'playground/execute'
   }
 };
