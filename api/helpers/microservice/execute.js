@@ -21,6 +21,9 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
+    if (!inputs.source) {
+      return exits.error('Couldn\'t read input');
+    }
     const source = inputs.source.stream;
     axios.post(sails.config.microserviceUrl, source)
       .then(payload => exits.success(payload.data))
