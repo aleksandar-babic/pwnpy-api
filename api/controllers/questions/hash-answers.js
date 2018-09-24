@@ -57,7 +57,7 @@ module.exports = {
 
         const answers = questions[i].answers;
         for (let j = 0; j < answers.length; ++j) {
-          if (answers[j].id === ans.answer && answers[j].isCorrect) {
+          if (answers[j].id === ans.id && answers[j].isCorrect) {
             return true;
           }
         }
