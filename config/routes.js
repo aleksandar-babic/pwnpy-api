@@ -12,6 +12,9 @@ module.exports.routes = {
   'GET /user': {
     action: 'user/index'
   },
+  'PUT /user': {
+    action: 'user/edit'
+  },
   'POST /user/signup': {
     action: 'user/signup'
   },

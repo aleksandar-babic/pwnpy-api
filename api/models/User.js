@@ -25,6 +25,11 @@ module.exports = {
       description: 'Collections of question hashes that are generated for user',
       collection: 'questionhash',
       via: 'user'
+    },
+    darkTheme: {
+      description: 'Boolean value for user preffered theme',
+      type: 'boolean',
+      defaultsTo: false
     }
   },
   beforeCreate(vals, proceed) {
