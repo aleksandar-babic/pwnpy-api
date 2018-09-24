@@ -22,6 +22,9 @@ module.exports = {
 
   fn: async function (inputs, exits) {
     try {
+      if (!this.req.file('source')) {
+        return exits.error('Couldn\'t read from form-data source.')
+      }
       const source = this.req.file('source')._files[0];
       const res = await sails.helpers.microservice.execute(source);
       return exits.success(res);
