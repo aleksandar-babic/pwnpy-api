@@ -5,8 +5,14 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
-module.exports = {
+const QUESTION_POINTS = [
+  100,
+  200,
+  300
+];
 
+module.exports = {
+  POINTS: QUESTION_POINTS,
   attributes: {
     body: {
       description: 'Body of question.',

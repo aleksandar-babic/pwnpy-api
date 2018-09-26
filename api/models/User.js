@@ -35,6 +35,11 @@ module.exports = {
       description: 'Collection of completed questions by user',
       collection: 'question',
       via: 'usersCompleted'
+    },
+    experience: {
+      description: 'User\s experience points',
+      type: 'number',
+      defaultsTo: 0
     }
   },
   beforeCreate(vals, proceed) {
