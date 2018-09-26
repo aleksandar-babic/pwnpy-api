@@ -28,6 +28,11 @@ module.exports = {
       description: 'Collection of hashes generated for this question',
       collection: 'questionhash',
       via: 'questions'
+    },
+    usersCompleted: {
+      description: 'Collection of users that completed this question',
+      collection: 'user',
+      via: 'completedQuestions'
     }
   },
 

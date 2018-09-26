@@ -30,6 +30,11 @@ module.exports = {
       description: 'Boolean value for user preffered theme',
       type: 'boolean',
       defaultsTo: false
+    },
+    completedQuestions: {
+      description: 'Collection of completed questions by user',
+      collection: 'question',
+      via: 'usersCompleted'
     }
   },
   beforeCreate(vals, proceed) {

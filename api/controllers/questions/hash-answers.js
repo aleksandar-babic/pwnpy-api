@@ -64,6 +64,8 @@ module.exports = {
       }
     });
 
+    await User.addToCollection(this.req.user.data.id, 'completedQuestions', correctAnswersArr.map(ans => ans.question));
+
     await QuestionHash.destroy({
       id: inputs.hash
     });
