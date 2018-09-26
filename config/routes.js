@@ -15,6 +15,9 @@ module.exports.routes = {
   'PUT /user': {
     action: 'user/edit'
   },
+  'PUT /user/change-pw': {
+    action: 'user/change-pw'
+  },
   'POST /user/signup': {
     action: 'user/signup'
   },
