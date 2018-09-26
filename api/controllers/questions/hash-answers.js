@@ -88,7 +88,7 @@ module.exports = {
 
     return exits.success({
       correctAnswers: correctAnswersArr,
-      user: updatedUser[0]
+      user: updatedUser ? updatedUser[0] : null
     });
 
   }
