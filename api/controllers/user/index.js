@@ -23,13 +23,13 @@ module.exports = {
     }).populate('completedQuestions');
 
     const totalQuestions = {
-      beginner: await Question.count({
+      1: await Question.count({
         difficulty: 1
       }),
-      intermediate: await Question.count({
+      2: await Question.count({
         difficulty: 2
       }),
-      pro: await Question.count({
+      3: await Question.count({
         difficulty: 3
       })
     };
