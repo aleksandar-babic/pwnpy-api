@@ -30,7 +30,16 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
+    const userId = this.req.user.data.id;
+    const user = await User.findOne({
+      id: userId
+    }).populate('completedQuestions');
+
+    const completedQuestionsIds = user.completedQuestions.map(q => q.id);
     const questions = await Question.find({
+      id: {
+        nin: completedQuestionsIds
+      },
       difficulty: inputs.difficulty
     }).limit(inputs.limit).populate('answers');
 
@@ -41,7 +50,6 @@ module.exports = {
     const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
 
     const shuffledQuestionsIds = shuffledQuestions.map(q => q.id);
-    const userId = this.req.user.data.id;
     const questionHash = await QuestionHash.create({
       questions: shuffledQuestionsIds,
       user: userId,
